@@ -1,2 +1,11 @@
-# rpgmv-drama
-Scenario message management plug-in for RPG Maker MV
+# ツクールMV専用プラグイン H2A-drama
+文章の表示で使用する文章を、プラグインとして別ファイルに分けて管理します。
+
+## Usage
+### 基本
+1. プラグイン「H2A-drama」をONに設定する
+2. そのプラグインの下に、文章専用に作ったプラグインを配置しONにする
+3. 文章を表示したいタイミングで、`イベントコマンド:スクリプト` を使い以下のようなスクリプトを入力する
+```js
+drama.read("book名", page数);
+```
