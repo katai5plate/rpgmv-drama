@@ -8,11 +8,15 @@
     "@babel/preset-env": "7.1.0",
     "gulp": "3.9.1",
     "gulp-babel": "8.0.0",
+    "gulp-beautify": "2.0.1",
+    "gulp-jsfuck": "0.2.1",
     "gulp-plumber": "1.2.0",
     "gulp-rename": "1.4.0",
     "gulp-uglify": "3.0.1"
   },
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:bad": "gulp fuck",
+    "build:all": "gulp build fuck"
   }
 }
