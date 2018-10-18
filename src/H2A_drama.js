@@ -10,7 +10,7 @@
     },
     write: function (book, pages) {
       if (this.getBook(book).length !== 0) {
-        console.error(`The book "${book}" has already been booked.`);
+        console.error(`The "${book}" book has already been booked.`);
         return;
       }
       this.libraries = [
