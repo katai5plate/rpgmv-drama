@@ -6,7 +6,7 @@ https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.j
 
 ## Usage
 ### 基本
-1. プラグイン「H2A-drama」をONに設定する
+1. プラグイン「H2A_drama」をONに設定する
 2. そのプラグインの下に、文章専用に作ったプラグインを配置しONにする
 3. 文章を表示したいタイミングで、`イベントコマンド:スクリプト` を使い以下のようなスクリプトを入力する
 ```js
