@@ -58,11 +58,11 @@ drama.write("book名", [
 
 ### わからない人向け手順
 0. 以下が入っていない場合はインストールする
-```
-・Node.js
-・yarn
-・gulp
-・git
+```yml
+- Node.js
+- yarn
+- gulp
+- git
 ```
 1. コマンドプロンプトかターミナルを開き、以下を行う
 ```cmd
