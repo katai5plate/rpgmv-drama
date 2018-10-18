@@ -5,6 +5,9 @@
     define: function () {
       window.drama = typeof window.drama === "undefined" ? { ...this } : window.drama;
     },
+    chara: function(items){
+      this.faces = {...this.faces, ...items};
+    },
     write: function (book, pages) {
       if (this.getBook(book).length !== 0) {
         console.error(`The book "${book}" has already been booked.`);
@@ -16,15 +19,19 @@
       ];
     },
     read: function (book, page) {
-      const paper = this.getBook(book)[page]
-        .split(/[\n|\r]/g)
-        .map(v => v.replace(/^.*?(\b.*?)/, "$1"));
-      const face = this.faces[paper[0]];
-      $gameMessage.setFaceImage(face[0], face[1]);
-      $gameMessage.add(`${paper.slice(1).join("\n")}\f`)
+      const paper = this.getBook(book).pages[page];
+      paper.forEach((message, index) => {
+        const mes = message
+          .split(/[\n|\r]/g)
+          .map(v => v.replace(/^.*?(\b.*?)/, "$1"));
+        const face = this.faces[mes[0]] || ["",0];
+        console.log({face})
+        $gameMessage.setFaceImage(face[0], face[1]);
+        $gameMessage.add(`${mes.slice(1).join("\n")}\f`)
+      })
     },
     getBook: function (book) {
-      return this.libraries.filter(v => v.book === book)[0];
+      return this.libraries.filter(v => v.book === book)[0] || [];
     }
   };
   _$drama.define();
