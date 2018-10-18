@@ -2,9 +2,9 @@
 文章の表示で使用する文章を、プラグインとして別ファイルに分けて管理します。
 
 ## Download
-[コンパイル版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/out/H2A_drama.safe.js)
-[コンパイル版・軽量](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/out/H2A_drama.safe.min.js)
-[通常版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js)
+- [コンパイル版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/out/H2A_drama.safe.js)
+- [コンパイル版・軽量](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/out/H2A_drama.safe.min.js)
+- [通常版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js)
 
 ## Usage
 ### 基本
