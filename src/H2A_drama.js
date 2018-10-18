@@ -1,5 +1,14 @@
+/*:
+ * @plugindesc Scenario message management plug-in for RPG Maker MV
+ * @author Had2Apps
+ *
+ * @help 
+ * https://github.com/katai5plate/rpgmv-drama/blob/master/README.md
+ *
+ */
+
 (() => {
-  const _$drama = {
+  const _drama = {
     libraries: [],
     faces: {},
     define: function () {
@@ -33,5 +42,5 @@
       return this.libraries.filter(v => v.book === book)[0] || [];
     }
   };
-  _$drama.define();
+  _drama.define();
 })()
