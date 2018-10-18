@@ -5,8 +5,8 @@
     define: function () {
       window.drama = typeof window.drama === "undefined" ? { ...this } : window.drama;
     },
-    chara: function(items){
-      this.faces = {...this.faces, ...items};
+    chara: function (items) {
+      this.faces = { ...this.faces, ...items };
     },
     write: function (book, pages) {
       if (this.getBook(book).length !== 0) {
@@ -23,9 +23,8 @@
       paper.forEach((message, index) => {
         const mes = message
           .split(/[\n|\r]/g)
-          .map(v => v.replace(/^.*?(\b.*?)/, "$1"));
-        const face = this.faces[mes[0]] || ["",0];
-        console.log({face})
+          .map(v => v.replace(/^.*?(\S.*?)/, "$1"));
+        const face = this.faces[mes[0]] || ["", 0];
         $gameMessage.setFaceImage(face[0], face[1]);
         $gameMessage.add(`${mes.slice(1).join("\n")}\f`)
       })
