@@ -20,10 +20,10 @@ drama.write("opening", [
     
     odkoqkdokodqwkokdw`,
     `> 
-    odkoq\c[6]kdokodqwkokdw
+    odkoq\\c[6]kdokodqwkokdw
     odkoqkdokodqwkokdw
     odkoqkdokodqwkokdw
-    odkoqkdok\c[0]odqwkokdw`
+    odkoqkdok\\c[0]odqwkokdw`
   ]
 ])
 
