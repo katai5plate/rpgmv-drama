@@ -4,7 +4,7 @@ drama.chara({
   "C-san": ["Actor", 3],
 })
 
-drama.write("opening", [
+drama.write("test", [
   [
     `> A-san
     odkoqkdokodqwkokdw
@@ -27,4 +27,4 @@ drama.write("opening", [
   ]
 ])
 
-// drama.read("opening", 0);
+// drama.read("test", 0);
