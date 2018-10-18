@@ -52,11 +52,10 @@ drama.write("book名", [
 ])
 ```
 
-## 古いブラウザでも動くようにしたい場合
-コンパイルする必要があります。
-
+## 文章専用プラグインを１つのファイルに圧縮したい場合
+- 上級者向け。
 ### わかる人向け手順
-そのまんま `gulp` してやれば `out/` にコンパイルされます
+文章専用プラグインを src/books に置いて `gulp archive` するだけ。
 
 ### わからない人向け手順
 0. 以下が入っていない場合はインストールする
@@ -72,22 +71,7 @@ cd "任意の作業フォルダの絶対パス"
 git clone https://github.com/katai5plate/rpgmv-drama.git
 cd rpgmv-drama
 yarn install
-yarn build
 ```
-2. outフォルダにコンパイルされたプラグインが出力されます
-```bat
-H2A_drama.safe.js
-: 可読性を残してコンパイルしたバージョン
-H2A_drama.safe.min.js
-: 軽量化と難読化を最優先してコンパイルしたバージョン
-```
-
-## 文章専用プラグインを１つのファイルに圧縮したい場合
-### わかる人向け手順
-文章専用プラグインを src/books に置いて `gulp archive` するだけ。
-
-### わからない人向け手順
-1. 上記 `古いブラウザでも動くようにしたい場合` の `0.` ～ `1.` を行う
 2. 作業フォルダの中にある `src` フォルダの中に `books` フォルダを作って、そこに圧縮したい文章専用プラグインを全部入れる
 3. `1.` から使っているコマンドプロンプトかターミナルで以下を行う
 ```bat
@@ -104,15 +88,30 @@ book-shelf.safe.min.js
 ```
 
 ## References
+### Scripts
+#### start
+- `yarn start` or `npm start`
+- すべての主要機能が走ります。
+#### build
+- `yarn build` or `npm run build` or `gulp build`
+- プラグインのコンパイルを行い out/ に出力します。
+#### archive
+- `yarn archive` or `npm run archive` or `gulp archive`
+- src/books 内の js ファイルを結合・コンパイルし、 out/books に `book-shelf` として出力します。
+#### build-all
+- `gulp build-all`
+- src/ 内のすべての js ファイルをコンパイルし out/ に出力します。
+
+### Plug-in
 - メタ: プラグイン内部で使用されるメソッド。
 - 外部入力用: 文章専用プラグイン内での使用を推奨するメソッド。
 - イベント用: スクリプトイベントコマンドでの使用を推奨するメソッド。
 - `<...>` のように表記された引数は省略可能です。
-### `drama.define()`
+#### `drama.define()`
 - メタ
 - プラグイン本体が読み込まれると最初に実行されます。
 - グローバル変数に `drama` が無い場合、`drama` をグローバルに定義します。
-### `drama.chara({表示名: [ファイル名, 番号] })`
+#### `drama.chara({表示名: [ファイル名, 番号] })`
 - 外部入力用
 - 文章の 1 行目で指定したキーワードによって設定される顔グラフィックを定義します。
 - 2 回以上実行された場合、過去の内容とマージされます。
@@ -130,7 +129,7 @@ drama.chara({
   "ゴメス": ["Face_Actor_Other", 2],
 })
 ```
-### `drama.write(book名, [[message内容, ...], [page], ...])`
+#### `drama.write(book名, [[message内容, ...], [page], ...])`
 - 外部入力用
 - `drama.read` で呼び出す事ができる文章を `本` として定義します。
   - book: 「オープニング」や「村人A」など くくり のようなものです。中に沢山の `page` を加えることができます。
@@ -158,7 +157,7 @@ drama.chara({
   ２行目
   ` // <-- 空行の３行目として扱われます
   ```
-### `drama.read(book名, page数, <[スライス開始, スライス終了]>)`
+#### `drama.read(book名, page数, <[スライス開始, スライス終了]>)`
 - イベント用
 - 実行すると指定された `message` で `文章を表示` を行います。
 - 第 3 引数のスライスを設定することで、指定の `page` から一部の `message` に絞ることができます。
@@ -171,7 +170,7 @@ drama.read("opening", 0);
 // 使用例: 会話の途中に文章以外のイベントを挟む時など
 drama.read("opening", 5, [0, 3]);
 ```
-### `drama.getBook(book名)`
+#### `drama.getBook(book名)`
 - メタ
 - 指定の `book名` の `book` を検索・取得します。
 - 見つからなかった場合、空の配列が返ります。
