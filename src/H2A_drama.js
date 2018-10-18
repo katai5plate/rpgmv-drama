@@ -27,9 +27,9 @@
         { book, pages }
       ];
     },
-    read: function (book, page) {
-      const paper = this.getBook(book).pages[page];
-      paper.forEach((message, index) => {
+    read: function (book, page, slice = []) {
+      const paper = this.getBook(book).pages[page].slice(...slice);
+      paper.forEach((message) => {
         const mes = message
           .split(/[\n|\r]/g)
           .map(v => v.replace(/^.*?(\S.*?)/, "$1"));
