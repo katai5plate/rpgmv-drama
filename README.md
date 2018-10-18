@@ -1,6 +1,9 @@
 # ツクールMV専用プラグイン H2A-drama
 文章の表示で使用する文章を、プラグインとして別ファイルに分けて管理します。
 
+# Download
+https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js
+
 ## Usage
 ### 基本
 1. プラグイン「H2A-drama」をONに設定する
@@ -66,3 +69,9 @@ yarn install
 yarn build
 ```
 2. outフォルダにコンパイルされたプラグインが出力されます
+```bat
+H2A_drama.safe.js
+: 可読性を残してコンパイルしたバージョン
+H2A_drama.safe.min.js
+: 軽量化を最優先してコンパイルしたバージョン
+```
