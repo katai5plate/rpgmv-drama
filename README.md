@@ -46,3 +46,23 @@ drama.write("book名", [
   ]
 ])
 ```
+
+## 昔のブラウザでも動くようにしたい場合
+コンパイルする必要があります。
+
+0. 以下が入っていない場合はインストールする
+```
+・Node.js
+・yarn
+・gulp
+・git
+```
+1. コマンドプロンプトかターミナルを開き、以下を行う
+```cmd
+cd "任意の作業フォルダの絶対パス"
+git clone https://github.com/katai5plate/rpgmv-drama.git
+cd rpgmv-drama
+yarn install
+yarn build
+```
+2. outフォルダにコンパイルされたプラグインが出力されます
