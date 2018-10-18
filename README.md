@@ -150,3 +150,18 @@ drama.chara({
   - タグを使用する場合 `\\c[6]` のように `\` を 2 つ使用します。
 ### `drama.read(book名, page数, <[スライス開始, スライス終了]>)`
 - イベント用
+- 実行すると指定された `message` で `文章を表示` を行います。
+- 第 3 引数のスライスを設定することで、指定の `page` から一部の `message` に絞ることができます。
+  - 挙動は `String.prototype.slice` と同じです。
+- 入力例:
+```js
+// book「opening」の 0 page目をすべて表示
+drama.read("opening", 0);
+// book「opening」の 5 page目の 0 ～ 2 番目を表示
+// 使用例: 会話の途中に文章以外のイベントを挟む時など
+drama.read("opening", 5, [0, 3]);
+```
+### `drama.getBook(book名)`
+- メタ
+- 指定の `book名` の `book` を検索・取得します。
+- 見つからなかった場合、空の配列が返ります。
