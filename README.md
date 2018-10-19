@@ -2,9 +2,11 @@
 文章の表示で使用する文章を、プラグインとして別ファイルに分けて管理します。
 
 ## Download
+- [通常版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js)
+
 - [コンパイル版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/out/H2A_drama.safe.js)
 - [コンパイル版・軽量](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/out/H2A_drama.safe.min.js)
-- [通常版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js)
+  - ファイル名を `H2A_drama.js` にしてお使いください
 
 ## Usage
 ### 基本
@@ -86,6 +88,7 @@ book-shelf.safe.js
 book-shelf.safe.min.js
 : 軽量化と難読化を最優先して古いブラウザでも動くように圧縮したバージョン
 ```
+5. 使うプラグインの拡張子を`.js`のみにしてお使いください
 
 ## References
 ### Scripts
