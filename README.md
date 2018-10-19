@@ -55,7 +55,7 @@ drama.write("book名", [
 ## 文章専用プラグインを１つのファイルに圧縮したい場合
 - 上級者向け。
 ### わかる人向け手順
-文章専用プラグインを src/books に置いて `gulp archive` するだけ。
+文章専用プラグインを src/books に置いて `yarn archive` するだけ。
 
 ### わからない人向け手順
 0. 以下が入っていない場合はインストールする
@@ -75,7 +75,7 @@ yarn install
 2. 作業フォルダの中にある `src` フォルダの中に `books` フォルダを作って、そこに圧縮したい文章専用プラグインを全部入れる
 3. `1.` から使っているコマンドプロンプトかターミナルで以下を行う
 ```bat
-yarn packing
+yarn archive
 ```
 4. out/booksフォルダに圧縮されたプラグインが出力されます
 ```bat
@@ -93,10 +93,10 @@ book-shelf.safe.min.js
 - `yarn start` or `npm start`
 - すべての主要機能が走ります。
 #### build
-- `yarn build` or `npm run build` or `gulp build`
+- `yarn build` or `npm run build`
 - プラグインのコンパイルを行い out/ に出力します。
 #### archive
-- `yarn archive` or `npm run archive` or `gulp archive`
+- `yarn archive` or `npm run archive`
 - src/books 内の js ファイルを結合・コンパイルし、 out/books に `book-shelf` として出力します。
 #### build-all
 - `gulp build-all`
@@ -108,11 +108,11 @@ book-shelf.safe.min.js
 - イベント用: スクリプトイベントコマンドでの使用を推奨するメソッド。
 - `<...>` のように表記された引数は省略可能です。
 #### `drama.define()`
-- メタ
+- メタMethod
 - プラグイン本体が読み込まれると最初に実行されます。
 - グローバル変数に `drama` が無い場合、`drama` をグローバルに定義します。
 #### `drama.chara({表示名: [ファイル名, 番号] })`
-- 外部入力用
+- 外部入力用Method
 - 文章の 1 行目で指定したキーワードによって設定される顔グラフィックを定義します。
 - 2 回以上実行された場合、過去の内容とマージされます。
 - 入力例: ( `$$` による差分管理機能をそのうち実装予定 )
@@ -130,7 +130,7 @@ drama.chara({
 })
 ```
 #### `drama.write(book名, [[message内容, ...], [page], ...])`
-- 外部入力用
+- 外部入力用Method
 - `drama.read` で呼び出す事ができる文章を `本` として定義します。
   - book: 「オープニング」や「村人A」など くくり のようなものです。中に沢山の `page` を加えることができます。
   - page: 「１回目のイベント」や「薬草を持っている時」などの 段落 のようなものです。中に沢山の `message` を加えることができます。
@@ -158,7 +158,7 @@ drama.chara({
   ` // <-- 空行の３行目として扱われます
   ```
 #### `drama.read(book名, page数, <[スライス開始, スライス終了]>)`
-- イベント用
+- イベント用Method
 - 実行すると指定された `message` で `文章を表示` を行います。
 - 第 3 引数のスライスを設定することで、指定の `page` から一部の `message` に絞ることができます。
   - 挙動は `String.prototype.slice` と同じです。
@@ -171,6 +171,12 @@ drama.read("opening", 0);
 drama.read("opening", 5, [0, 3]);
 ```
 #### `drama.getBook(book名)`
-- メタ
+- メタMethod
 - 指定の `book名` の `book` を検索・取得します。
 - 見つからなかった場合、空の配列が返ります。
+#### `drama.faces`
+- メタObject
+- `drama.chara`にて追加されたデータはここに蓄積されます
+#### `drama.libraries`
+- メタCollection
+- `drama.write`にて追加された `book` はここに蓄積されます
