@@ -1,6 +1,9 @@
 # ツクールMV専用プラグイン H2A-drama
 文章の表示で使用する文章を、プラグインとして別ファイルに分けて管理します。
 
+- このプロジェクトは未完成です！
+- コントリビューター(共同開発者)を募集中。改善点をプルリクしてください。
+
 ## Download
 - [通常版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js)
 
