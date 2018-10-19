@@ -33,7 +33,7 @@
         const mes = message
           .split(/[\n|\r]/g)
           .map(v => v.replace(/^.*?(\S.*?)/, "$1"));
-        const face = this.faces[mes[0]] || ["", 0];
+        const face = this.faces[mes[0].replace("> ","")] || ["", 0];
         $gameMessage.setFaceImage(face[0], face[1]);
         $gameMessage.add(`${mes.slice(1).join("\n")}\f`)
       })
