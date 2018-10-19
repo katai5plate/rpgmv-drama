@@ -3,6 +3,7 @@
 
 - このプロジェクトは未完成です！
 - コントリビューター(共同開発者)を募集中。改善点をプルリクしてください。
+- [既知のバグ・追加予定機能についてはこちらを参照](https://github.com/katai5plate/rpgmv-drama/issues)
 
 ## Download
 - [通常版](https://raw.githubusercontent.com/katai5plate/rpgmv-drama/master/src/H2A_drama.js)
